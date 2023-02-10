@@ -24,7 +24,7 @@ import { appReducers } from './app.reducer';
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
-      logOnly: environment.production  // Restrict extension to log-only mode// maximum stack trace frames to be stored (in case trace option was provided as true)
+      logOnly: environment.production
     })
   ],
   providers: [],
