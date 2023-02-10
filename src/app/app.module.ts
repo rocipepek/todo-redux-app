@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -23,7 +24,7 @@ import { appReducers } from './app.reducer';
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
-      logOnly: !isDevMode(), // Restrict extension to log-only mode// maximum stack trace frames to be stored (in case trace option was provided as true)
+      logOnly: environment.production  // Restrict extension to log-only mode// maximum stack trace frames to be stored (in case trace option was provided as true)
     })
   ],
   providers: [],
